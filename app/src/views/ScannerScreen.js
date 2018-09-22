@@ -1,42 +1,65 @@
 import React, { Component } from 'react';
+
 import {
-  Button,
+  StyleSheet,
   Text,
-  View,
+  TouchableOpacity,
+  Linking,
 } from 'react-native';
-import Screen from '../components/Screen';
-import { RNCamera as Camera } from 'react-native-camera';
-import Authentication from '../domains/Authentication/services';
 
-class ScannerScreen extends Component {
-  onLogout = async () => {
-    await Authentication.unauthenticate();
-    this.props.navigation.navigate('Guest');
-  };
+import QRCodeScanner from 'react-native-qrcode-scanner';
+import { RNCamera } from 'react-native-camera';
 
-  setCamera = (camera) => {
-    if (this.camera === camera)
-      return;
-    this.camera = camera;
-  };
+class ScanScreen extends Component {
+  onSuccess(e) {
+    Linking
+      .openURL(e.data)
+      .catch(err => console.error('An error occured', err));
+  }
 
-  render () {
+  render() {
     return (
-      <Screen>
-        <View>
-          <Camera
-            ref={ this.setCamera }
-            type={ Camera.Constants.Type.back }
-            flashMode={ Camera.Constants.FlashMode.off }
-            permissionDialogTitle={ 'Permissões' }
-            permissionDialogMessage={ 'Você precisa habilitar o uso da camera.' }
-          />
-          <Text>Escanear produtos.</Text>
-          <Button title="Sair" onPress={ this.onLogout } />
-        </View>
-      </Screen>
-    )
+      <QRCodeScanner
+        onRead={this.onSuccess.bind(this)}
+        cameraProps={{
+          type: RNCamera.Constants.Type.back,
+          flashMode: RNCamera.Constants.FlashMode.off,
+          permissionDialogTitle: 'Permissões',
+          permissionDialogMessage: 'Você precisa habilitar o uso da camera.'
+        }}
+        topContent={
+          <Text style={styles.centerText}>
+            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
+          </Text>
+        }
+        bottomContent={
+          <TouchableOpacity style={styles.buttonTouchable}>
+            <Text style={styles.buttonText}>OK. Got it!</Text>
+          </TouchableOpacity>
+        }
+      />
+    );
   }
 }
 
-export default ScannerScreen;
+const styles = StyleSheet.create({
+  centerText: {
+    flex: 1,
+    fontSize: 18,
+    padding: 32,
+    color: '#777',
+  },
+  textBold: {
+    fontWeight: '500',
+    color: '#000',
+  },
+  buttonText: {
+    fontSize: 21,
+    color: 'rgb(0,122,255)',
+  },
+  buttonTouchable: {
+    padding: 16,
+  },
+});
+
+export default ScanScreen;

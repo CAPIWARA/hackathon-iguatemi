@@ -4,8 +4,17 @@ import {
   Text,
 } from 'react-native';
 import Screen from '../components/Screen';
+import Authentication from '../domains/Authentication/services';
 
 class LoaderScreen extends Component {
+  async componentDidMount () {
+    const isAuthenticated = await Authentication.isAuthenticated();
+    this.props.navigation.navigate(
+      isAuthenticated ? 'User' : 'Guest'
+    );
+  }
+
+
   render () {
     return (
       <Screen>

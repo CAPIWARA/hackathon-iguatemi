@@ -16,5 +16,10 @@
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "0.45.6"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }

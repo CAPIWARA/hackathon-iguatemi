@@ -39,6 +39,8 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		789696363BA54216BF841D5A /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0F4C1CF58C442BA387BA07 /* libRNCamera.a */; };
 		46D88702558348F8A2C6A122 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526195ACF70A4275A4329853 /* libReactNativePermissions.a */; };
+		B3DCD916F79F45B3B96E9793 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC73566F944F0E9B2A29F9 /* OpenSans-Light.ttf */; };
+		D9848EBD49604198A26DE3D8 /* Prata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF302944599A4403A9E65FE1 /* Prata-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +350,8 @@
 		DB0F4C1CF58C442BA387BA07 /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		66A71DDDA39E49248075CEDD /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativePermissions.xcodeproj"; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		526195ACF70A4275A4329853 /* libReactNativePermissions.a */ = {isa = PBXFileReference; name = "libReactNativePermissions.a"; path = "libReactNativePermissions.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1BDC73566F944F0E9B2A29F9 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF302944599A4403A9E65FE1 /* Prata-Regular.ttf */ = {isa = PBXFileReference; name = "Prata-Regular.ttf"; path = "../assets/fonts/Prata-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +590,7 @@
 				00E356EF1AD99517003FC87E /* appTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				0EF385E801BE44AABE805F1D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -611,6 +616,16 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		0EF385E801BE44AABE805F1D /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				1BDC73566F944F0E9B2A29F9 /* OpenSans-Light.ttf */,
+				AF302944599A4403A9E65FE1 /* Prata-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1058,6 +1073,8 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				B3DCD916F79F45B3B96E9793 /* OpenSans-Light.ttf in Resources */,
+				D9848EBD49604198A26DE3D8 /* Prata-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

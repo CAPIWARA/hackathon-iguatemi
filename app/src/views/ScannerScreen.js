@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
-  View,
+  Button,
   Text,
+  View,
 } from 'react-native';
 import Screen from '../components/Screen';
-import Authentication from '../domains/Notification/services';
+import Authentication from '../domains/Authentication/services';
 
 class ScannerScreen extends Component {
   onLogout = async () => {

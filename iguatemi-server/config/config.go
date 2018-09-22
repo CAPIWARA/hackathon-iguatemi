@@ -1,7 +1,8 @@
-package main
+package config
 
 import (
 	"github.com/graphql-go/graphql"
+	gqlhandler "github.com/graphql-go/graphql-go-handler"
 )
 
 const (
@@ -17,7 +18,9 @@ var query = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name:        "query",
 		Description: "query",
-		Fields:      graphql.Fields{},
+		Fields: graphql.Fields{
+			"getCards": FieldGetCards,
+		},
 	},
 )
 
@@ -25,10 +28,12 @@ var mutation = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name:        "mutation",
 		Description: "mutation",
-		Fields:      graphql.Fields{},
+		Fields: graphql.Fields{
+			"registerCard": FieldRegisterCard,
+		},
 	},
 )
 
 var Handler = gqlhandler.New(&gqlhandler.Config{
-	Schema: schema,
+	Schema: &schema,
 })

@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import React from 'react';
+import { TextInput, View } from 'react-native';
+import Text from './Text';
 
 const Entry = ({
   name = '',

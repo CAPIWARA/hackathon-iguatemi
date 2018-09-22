@@ -5,6 +5,7 @@ import (
 	"github.com/kr/pretty"
 )
 
+//TODO aqui nao é rotas de graphql (eu acho)
 func Payment(params graphql.ResolveParams) (interface{}, error) {
 	pretty.Log("payment")
 	return nil, nil

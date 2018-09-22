@@ -15,7 +15,7 @@ func main() {
 
 	mux := mux.NewRouter()
 	pretty.Logf("starting on port %s", config.PORT)
-	mux.Handle("/graphql", config.Handler)
+	mux.Handle("/graphql", cors(config.Handler))
 	log.Fatal(http.ListenAndServe(config.PORT, mux), nil)
 }
 
@@ -26,7 +26,6 @@ func cors(next http.Handler) http.Handler {
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Expose-Headers", "Authorization")
 		if r.Method == "OPTIONS" {
-			log.Println("options method ")
 			return
 		}
 		next.ServeHTTP(w, r)

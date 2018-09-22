@@ -19,3 +19,13 @@ func ScanHistory(params graphql.ResolveParams) (interface{}, error) {
 	pretty.Log("scan history")
 	return nil, nil
 }
+
+func FindUser(params graphql.ResolveParams) (interface{}, error) {
+	pretty.Log("find user")
+	return nil, nil
+}
+
+func NewUser(params graphql.ResolveParams) (interface{}, error) {
+	pretty.Log("new user")
+	return nil, nil
+}

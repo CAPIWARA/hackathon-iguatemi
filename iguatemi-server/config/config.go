@@ -1,8 +1,6 @@
 package config
 
 import (
-	"hackathon-iguatemi/iguatemi-server/graphqlapi"
-
 	"github.com/graphql-go/graphql"
 	gqlhandler "github.com/graphql-go/graphql-go-handler"
 )
@@ -21,7 +19,7 @@ var query = graphql.NewObject(
 		Name:        "query",
 		Description: "query",
 		Fields: graphql.Fields{
-			"getCards": graphqlapi.FieldGetCards,
+			"getCards": FieldGetCards,
 		},
 	},
 )
@@ -31,7 +29,7 @@ var mutation = graphql.NewObject(
 		Name:        "mutation",
 		Description: "mutation",
 		Fields: graphql.Fields{
-			"registerCard": graphqlapi.FieldRegisterCard,
+			"registerCard": FieldRegisterCard,
 		},
 	},
 )

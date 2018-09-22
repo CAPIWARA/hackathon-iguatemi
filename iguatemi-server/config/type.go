@@ -1,4 +1,4 @@
-package graphqlapi
+package config
 
 import "github.com/graphql-go/graphql"
 
@@ -27,3 +27,30 @@ var typeCreditCard = graphql.NewObject(graphql.ObjectConfig{
 		},
 	},
 })
+
+var typeProduct = graphql.NewObject(graphql.ObjectConfig{
+	Name: "typeProduct",
+	Fields: graphql.Fields{
+		"id": &graphql.Field{
+			Name: "id",
+			Type: graphql.String,
+		},
+	}})
+
+var typeStore = graphql.NewObject(graphql.ObjectConfig{
+	Name: "typeStore",
+	Fields: graphql.Fields{
+		"id": &graphql.Field{
+			Name: "id",
+			Type: graphql.String,
+		},
+	}})
+
+var typeUser = graphql.NewObject(graphql.ObjectConfig{
+	Name: "typeUser",
+	Fields: graphql.Fields{
+		"id": &graphql.Field{
+			Name: "id",
+			Type: graphql.String,
+		},
+	}})

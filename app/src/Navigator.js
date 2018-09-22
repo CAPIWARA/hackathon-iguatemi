@@ -27,12 +27,18 @@ const screensForUsers = {
 const Navigator = createSwitchNavigator({
   User: {
     path: 'User',
-    screen: createStackNavigator(screensForUsers, { initialRouteKey: 'Scanner' }),
+    screen: createStackNavigator(screensForUsers, {
+      headerMode: 'none',
+      initialRouteKey: 'Scanner',
+    }),
   },
 
   Guest: {
     path: 'Guest',
-    screen: createStackNavigator(screensForGuests, { initialRouteKey: 'Login' }),
+    screen: createStackNavigator(screensForGuests, {
+      headerMode: 'none',
+      initialRouteKey: 'Login',
+    }),
   },
 
   Loader: {

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"hackathon-iguatemi/iguatemi-server/config"
 	"log"
 	"net/http"
 	"runtime"
@@ -13,9 +14,9 @@ func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU() - 1)
 
 	mux := mux.NewRouter()
-	pretty.Sprintf("starting on port %s", PORT)
-	mux.Handle("/graphql", cors(Handler))
-	log.Fatal(http.ListenAndServe(PORT, nil))
+	pretty.Logf("starting on port %s", config.PORT)
+	mux.Handle("/graphql", config.Handler)
+	log.Fatal(http.ListenAndServe(config.PORT, mux), nil)
 }
 
 func cors(next http.Handler) http.Handler {

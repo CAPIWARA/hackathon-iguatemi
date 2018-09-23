@@ -7,6 +7,7 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/guregu/dynamo"
 )
 
@@ -57,4 +58,20 @@ func GetProduct(uuid string) (interface{}, error) {
 		return nil, err
 	}
 	return data, nil
+}
+
+func SaveProduct(product interface{}) error {
+	av, err := dynamodbattribute.MarshalMap(product)
+	if err != nil {
+		pretty.Log("dynamodb save error: ", err)
+		return err
+	}
+
+	if err := DynamoConnection.Table("product").
+		Put(av).If("attribute_not_exists($)", "id").Run(); err != nil {
+		return err
+	}
+
+	return nil
+
 }

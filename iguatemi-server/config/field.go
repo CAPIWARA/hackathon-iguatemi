@@ -62,6 +62,9 @@ var FieldNewProduct = &graphql.Field{
 		"storeId": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
+		"productId": &graphql.ArgumentConfig{
+			Type: graphql.NewNonNull(graphql.String),
+		},
 	},
 	Resolve: product.NewProduct,
 }

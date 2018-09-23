@@ -32,6 +32,7 @@ var mutation = graphql.NewObject(
 		Description: "mutation",
 		Fields: graphql.Fields{
 			"registerCard": FieldRegisterCard,
+			"newProduct":   FieldNewProduct,
 		},
 	},
 )

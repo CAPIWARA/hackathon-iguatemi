@@ -28,12 +28,6 @@ var FieldRegisterCard = &graphql.Field{
 	Resolve: user.NewCard,
 }
 
-var FieldGetCards = &graphql.Field{
-	Type:        graphql.NewList(typeCreditCard),
-	Description: "getCards",
-	Resolve:     user.FindCards,
-}
-
 //TODO implent scan history model
 var FiledScanHistory = &graphql.Field{
 	Type:        graphql.NewList(nil),
@@ -107,10 +101,19 @@ var FieldGetStores = &graphql.Field{
 var FieldGetUser = &graphql.Field{
 	Type:        typeUser,
 	Description: "get user",
+	Resolve:     user.FindUser,
+}
+
+var FiledNewUser = &graphql.Field{
+	Type:        typeUser,
+	Description: "new user",
 	Args: graphql.FieldConfigArgument{
-		"userId": &graphql.ArgumentConfig{
+		"name": &graphql.ArgumentConfig{
+			Type: graphql.NewNonNull(graphql.String),
+		},
+		"address": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
 	},
-	Resolve: user.FindUser,
+	Resolve: user.NewUser,
 }

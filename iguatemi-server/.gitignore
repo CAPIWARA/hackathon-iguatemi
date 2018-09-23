@@ -1,3 +1,16 @@
 tmp/
 tmp
 tmp/*
+
+bin/*
+bin/
+bin
+
+vendor
+vendor/
+vendor/*
+
+.serverless/
+.serverless/*
+.serverless
+

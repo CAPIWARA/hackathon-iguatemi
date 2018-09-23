@@ -9,7 +9,7 @@ const (
 	PORT = ":3000"
 )
 
-var schema, _ = graphql.NewSchema(graphql.SchemaConfig{
+var Schema, _ = graphql.NewSchema(graphql.SchemaConfig{
 	Query:    query,
 	Mutation: mutation,
 })
@@ -19,7 +19,9 @@ var query = graphql.NewObject(
 		Name:        "query",
 		Description: "query",
 		Fields: graphql.Fields{
-			"getCards": FieldGetCards,
+			"getUser":    FieldGetUser,
+			"getStore":   FieldGetStore,
+			"getProduct": FieldGetProduct,
 		},
 	},
 )
@@ -35,5 +37,5 @@ var mutation = graphql.NewObject(
 )
 
 var Handler = gqlhandler.New(&gqlhandler.Config{
-	Schema: &schema,
+	Schema: &Schema,
 })

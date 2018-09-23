@@ -25,14 +25,25 @@ var typeCreditCard = graphql.NewObject(graphql.ObjectConfig{
 			Name: "ccv",
 			Type: graphql.String,
 		},
-	},
-})
+	}})
 
 var typeProduct = graphql.NewObject(graphql.ObjectConfig{
 	Name: "typeProduct",
 	Fields: graphql.Fields{
 		"id": &graphql.Field{
 			Name: "id",
+			Type: graphql.String,
+		},
+		"name": &graphql.Field{
+			Name: "name",
+			Type: graphql.String,
+		},
+		"price": &graphql.Field{
+			Name: "price",
+			Type: graphql.String,
+		},
+		"store": &graphql.Field{
+			Name: "store",
 			Type: graphql.String,
 		},
 	}})
@@ -44,6 +55,10 @@ var typeStore = graphql.NewObject(graphql.ObjectConfig{
 			Name: "id",
 			Type: graphql.String,
 		},
+		"name": &graphql.Field{
+			Name: "name",
+			Type: graphql.String,
+		},
 	}})
 
 var typeUser = graphql.NewObject(graphql.ObjectConfig{
@@ -52,5 +67,21 @@ var typeUser = graphql.NewObject(graphql.ObjectConfig{
 		"id": &graphql.Field{
 			Name: "id",
 			Type: graphql.String,
+		},
+		"name": &graphql.Field{
+			Name: "name",
+			Type: graphql.String,
+		},
+		"address": &graphql.Field{
+			Name: "address",
+			Type: graphql.String,
+		},
+		"avatar": &graphql.Field{
+			Name: "avatar",
+			Type: graphql.String,
+		},
+		"cards": &graphql.Field{
+			Name: "cards",
+			Type: graphql.NewList(typeCreditCard),
 		},
 	}})

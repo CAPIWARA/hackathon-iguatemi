@@ -1,7 +1,9 @@
 package main
 
 import (
+	"context"
 	"hackathon-iguatemi/iguatemi-server/config"
+	"hackathon-iguatemi/iguatemi-server/database"
 	"log"
 	"net/http"
 	"runtime"
@@ -12,6 +14,10 @@ import (
 
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU() - 1)
+	if err := database.LoadDatabase(); err != nil {
+		log.Fatalf("Database error: %v", err)
+		return
+	}
 
 	mux := mux.NewRouter()
 	pretty.Logf("starting on port %s", config.PORT)
@@ -28,6 +34,7 @@ func cors(next http.Handler) http.Handler {
 		if r.Method == "OPTIONS" {
 			return
 		}
-		next.ServeHTTP(w, r)
+		ctx := context.WithValue(r.Context(), "id", "1")
+		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }

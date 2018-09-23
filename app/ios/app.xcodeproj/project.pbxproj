@@ -66,6 +66,12 @@
 		FAE2B54EB636498E9333118F /* Key.png in Resources */ = {isa = PBXBuildFile; fileRef = DF382388A7CB4071AB061F0C /* Key.png */; };
 		574D1AA90B484BD593649752 /* Key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFF6C8DDB56433E9F798319 /* Key@2x.png */; };
 		6A7891C5437847EE93E4D694 /* Key@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBA5FBC53D04AEEB6B8B39F /* Key@3x.png */; };
+		301FA14A92F949B39CDF92DE /* Back-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CAD6359B04714720844081C9 /* Back-Dark.png */; };
+		761B2E58282A4F00956F1696 /* Back-Dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EFAE19181541EC8D770C72 /* Back-Dark@2x.png */; };
+		8A3F6ECF26E643F6B0C0587A /* Back-Dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E016E756D7B141589233D41B /* Back-Dark@3x.png */; };
+		D46422B25CFB475B93804F07 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = B73B7887D46A490F98FDC94B /* Back.png */; };
+		699ADC42218B4BDDAC3B3F6F /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F62590C44EBC47B78F1252B2 /* Back@2x.png */; };
+		CEC5D0484F0F4882A17FD040 /* Back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CD9023C124EA09DDA65F1 /* Back@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,6 +409,12 @@
 		DF382388A7CB4071AB061F0C /* Key.png */ = {isa = PBXFileReference; name = "Key.png"; path = "../assets/icons/Key.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7EFF6C8DDB56433E9F798319 /* Key@2x.png */ = {isa = PBXFileReference; name = "Key@2x.png"; path = "../assets/icons/Key@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6FBA5FBC53D04AEEB6B8B39F /* Key@3x.png */ = {isa = PBXFileReference; name = "Key@3x.png"; path = "../assets/icons/Key@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CAD6359B04714720844081C9 /* Back-Dark.png */ = {isa = PBXFileReference; name = "Back-Dark.png"; path = "../assets/icons/Back-Dark.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37EFAE19181541EC8D770C72 /* Back-Dark@2x.png */ = {isa = PBXFileReference; name = "Back-Dark@2x.png"; path = "../assets/icons/Back-Dark@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E016E756D7B141589233D41B /* Back-Dark@3x.png */ = {isa = PBXFileReference; name = "Back-Dark@3x.png"; path = "../assets/icons/Back-Dark@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B73B7887D46A490F98FDC94B /* Back.png */ = {isa = PBXFileReference; name = "Back.png"; path = "../assets/icons/Back.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F62590C44EBC47B78F1252B2 /* Back@2x.png */ = {isa = PBXFileReference; name = "Back@2x.png"; path = "../assets/icons/Back@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2E1CD9023C124EA09DDA65F1 /* Back@3x.png */ = {isa = PBXFileReference; name = "Back@3x.png"; path = "../assets/icons/Back@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +711,12 @@
 				DF382388A7CB4071AB061F0C /* Key.png */,
 				7EFF6C8DDB56433E9F798319 /* Key@2x.png */,
 				6FBA5FBC53D04AEEB6B8B39F /* Key@3x.png */,
+				CAD6359B04714720844081C9 /* Back-Dark.png */,
+				37EFAE19181541EC8D770C72 /* Back-Dark@2x.png */,
+				E016E756D7B141589233D41B /* Back-Dark@3x.png */,
+				B73B7887D46A490F98FDC94B /* Back.png */,
+				F62590C44EBC47B78F1252B2 /* Back@2x.png */,
+				2E1CD9023C124EA09DDA65F1 /* Back@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1176,6 +1194,12 @@
 				FAE2B54EB636498E9333118F /* Key.png in Resources */,
 				574D1AA90B484BD593649752 /* Key@2x.png in Resources */,
 				6A7891C5437847EE93E4D694 /* Key@3x.png in Resources */,
+				301FA14A92F949B39CDF92DE /* Back-Dark.png in Resources */,
+				761B2E58282A4F00956F1696 /* Back-Dark@2x.png in Resources */,
+				8A3F6ECF26E643F6B0C0587A /* Back-Dark@3x.png in Resources */,
+				D46422B25CFB475B93804F07 /* Back.png in Resources */,
+				699ADC42218B4BDDAC3B3F6F /* Back@2x.png in Resources */,
+				CEC5D0484F0F4882A17FD040 /* Back@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

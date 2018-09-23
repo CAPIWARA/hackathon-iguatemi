@@ -1,65 +1,37 @@
 import React, { Component } from 'react';
-
 import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
+  Button,
+  View,
   Linking,
 } from 'react-native';
+import Scanner from '../components/Scanner/Scanner';
+import Notification from '../domains/Notification/services';
+import Authentication from '../domains/Authentication/services';
 
-import QRCodeScanner from 'react-native-qrcode-scanner';
-import { RNCamera } from 'react-native-camera';
+class ScannerScreen extends Component {
+  onRead = async (e) => {
+    try {
+      await Linking.openURL(e.data);
+    } catch (error) {
+      Notification.showMessage('Erro ao abrir o Link.')
+    }
+  };
 
-class ScanScreen extends Component {
-  onSuccess(e) {
-    Linking
-      .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
-  }
+  onLogout = async () => {
+    await Authentication.unauthenticate();
+    this.props.navigation.navigate('Guest');
+  };
 
   render() {
     return (
-      <QRCodeScanner
-        onRead={this.onSuccess.bind(this)}
-        cameraProps={{
-          type: RNCamera.Constants.Type.back,
-          flashMode: RNCamera.Constants.FlashMode.off,
-          permissionDialogTitle: 'Permissões',
-          permissionDialogMessage: 'Você precisa habilitar o uso da camera.'
-        }}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-          </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
-      />
+      <View>
+        <Scanner
+          onRead={ this.onRead }
+        />
+        <Button title="Sair" onPress={ this.onLogout } />
+      </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
-  },
-  textBold: {
-    fontWeight: '500',
-    color: '#000',
-  },
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
-  },
-  buttonTouchable: {
-    padding: 16,
-  },
-});
-
-export default ScanScreen;
+export default ScannerScreen;

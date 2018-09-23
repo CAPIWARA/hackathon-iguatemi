@@ -2,42 +2,30 @@ import React, { Component } from 'react';
 import {
   Button,
   View,
-  Linking,
+  TouchableOpacity,
   StyleSheet,
+  ActivityIndicator,
 } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import Notification from '@/domains/Notification/services';
 import Authentication from '@/domains/Authentication/services';
 import Screen from '@/components/Screen';
+import { takePicture } from '@/domains/Camera/services';
+import { PulseIndicator } from 'react-native-indicators';
 
 class ScannerScreen extends Component {
   reference = undefined;
 
   state = {
     type: RNCamera.Constants.Type.back,
+    isFetching: false,
   };
 
   onTakePicture = async () => {
+    this.setState({ isFetching: true });
     const picture = await takePicture(this.reference);
-
-    console.log(picture);
-
-    // TODO: Descomentar o código abaixo e mandar a imagem para o back-end.
-
-    // const body = new FormData();
-
-    // body.append('photo', {
-    //   uri: picture.uri,
-    //   type: 'image/jpeg',
-    //   name: 'testPhotoName'
-    // });
-
-    // const response = await fetch('', {
-    //   body,
-    //   method: 'POST',
-    // });
-
-    // const x = await response.json();
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    this.setState({ isFetching: false });
+    this.navigation.navigate();
   };
 
   onLogout = async () => {
@@ -53,7 +41,11 @@ class ScannerScreen extends Component {
 
   render() {
     return (
-      <Screen>
+      <Screen
+        navigation={ this.props.navigation }
+        isBackAllowed 
+        isDarkStatusBar
+      >
         <RNCamera
           ref={ this.setReference }
           type={ this.state.type }
@@ -62,7 +54,20 @@ class ScannerScreen extends Component {
           permissionDialogTitle={ 'Permission to use camera' }
           permissionDialogMessage={ 'We need your permission to use your camera phone' }
         />
-        <Button title="Okay" onPress={ this.onTakePicture } />
+
+        <View style={ styles.footer }>
+          {
+            this.state.isFetching ? (
+              <PulseIndicator size={ 100 } color="#FFFFFF" />
+            ) : (
+              <TouchableOpacity
+                style={ styles.button }
+                onPress={ this.onTakePicture }
+                activeOpacity={ 0.3 }
+              />
+            )
+          }
+        </View>
       </Screen>
     );
   }
@@ -71,6 +76,25 @@ class ScannerScreen extends Component {
 const styles = StyleSheet.create({
   preview: {
     flex: 1,
+  },
+
+  button: {
+    width: 100,
+    height: 100,
+    borderWidth: 5,
+    borderColor: '#FFFFFF',
+    borderRadius: 100,
+  },
+  
+  footer: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 40,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
   }
 });
 

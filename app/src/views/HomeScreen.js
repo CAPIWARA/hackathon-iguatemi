@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet, Button, Dimensions, View } from 'react-native';
+import { StyleSheet, Dimensions, View } from 'react-native';
 import Fill from '@/components/Fill';
 import Text from '@/components/Text';
-import Avatar, { AVATAR_SIZE } from '@/components/Avatar';
 import Screen from '@/components/Screen';
-import { recoverItems } from '@/services/cart';
+import Avatar, { AVATAR_SIZE } from '@/components/Avatar';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { recoverScore } from '../services/score';
+import HomeStartButton from '@/components/Home/HomeStartButton';
+import HomeServicesItems from '@/components/Home/HomeServicesItems';
+
+/**
+ * Serviços.
+ */
 import { recoverUser } from '@/services/user';
+import { recoverItems } from '@/services/cart';
+import { recoverScore } from '@/services/score';
 
 class HomeScreen extends Component {
   state = {
@@ -56,11 +62,14 @@ class HomeScreen extends Component {
           source={ this.state.user && this.state.user.avatar }
           containerStyle={ styles.avatar }
         />
+
         <Text style={ styles.name }>{ this.state.user && this.state.user.name }</Text>
 
-        <Block >
+        <View style={ styles.view }>
+          <HomeStartButton style={ styles.view } onPress={ this.onMoveToScanner }  />
+        </View>
 
-        </Block>
+        <HomeServicesItems />
       </Screen>
     );
   }
@@ -74,6 +83,10 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'Prata-Regular',
     fontSize: 22,
+    marginTop: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 20,
   },
 
   text: { fontSize: 20 },
@@ -88,6 +101,11 @@ const styles = StyleSheet.create({
     height: CIRCLE_SIZE - CIRCLE_SIZE / 1.5 - getStatusBarHeight() - AVATAR_SIZE / 2,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  view: {
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 
   circle: {

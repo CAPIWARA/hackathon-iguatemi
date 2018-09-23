@@ -190,6 +190,7 @@
     "github.com/aws/aws-lambda-go/lambda",
     "github.com/aws/aws-sdk-go/aws",
     "github.com/aws/aws-sdk-go/aws/session",
+    "github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute",
     "github.com/gorilla/mux",
     "github.com/graphql-go/graphql",
     "github.com/graphql-go/graphql-go-handler",

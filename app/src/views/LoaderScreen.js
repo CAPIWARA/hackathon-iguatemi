@@ -3,8 +3,8 @@ import {
   View,
   Text,
 } from 'react-native';
-import Screen from '../components/Screen';
-import Authentication from '../domains/Authentication/services';
+import Screen from '@/components/Screen';
+import Authentication from '@/domains/Authentication/services';
 
 class LoaderScreen extends Component {
   async componentDidMount () {

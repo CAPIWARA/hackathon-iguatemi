@@ -3,9 +3,10 @@ import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 /**
  * Telas.
  */
-import LoginScreen from './views/LoginScreen';
-import LoaderScreen from './views/LoaderScreen';
-import ScannerScreen from './views/ScannerScreen';
+import HomeScreen from '@/views/HomeScreen';
+import LoginScreen from '@/views/LoginScreen';
+import LoaderScreen from '@/views/LoaderScreen';
+import ScannerScreen from '@/views/ScannerScreen';
 
 /**
  * Mapa de telas para os visitantes.
@@ -18,6 +19,7 @@ const screensForGuests = {
  * Mapa de telas para os usuários.
  */
 const screensForUsers = {
+  Home: HomeScreen,
   Scanner: ScannerScreen,
 };
 
@@ -29,7 +31,7 @@ const Navigator = createSwitchNavigator({
     path: 'User',
     screen: createStackNavigator(screensForUsers, {
       headerMode: 'none',
-      initialRouteKey: 'Scanner',
+      initialRouteKey: 'Home',
     }),
   },
 

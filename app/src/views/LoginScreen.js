@@ -4,9 +4,9 @@ import {
   Text,
   Button,
 } from 'react-native';
-import Screen from '../components/Screen';
-import Authentication from '../domains/Authentication/services';
-import Entry from '../components/Entry';
+import Screen from '@/components/Screen';
+import Authentication from '@/domains/Authentication/services';
+import Entry from '@/components/Entry';
 
 class LoginScreen extends Component {
   state = {

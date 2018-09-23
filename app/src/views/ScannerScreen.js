@@ -4,9 +4,9 @@ import {
   View,
   Linking,
 } from 'react-native';
-import Scanner from '../components/Scanner/Scanner';
-import Notification from '../domains/Notification/services';
-import Authentication from '../domains/Authentication/services';
+import Scanner from '@/components/Scanner/Scanner';
+import Notification from '@/domains/Notification/services';
+import Authentication from '@/domains/Authentication/services';
 
 class ScannerScreen extends Component {
   onRead = async (e) => {

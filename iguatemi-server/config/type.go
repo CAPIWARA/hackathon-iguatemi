@@ -46,6 +46,10 @@ var typeProduct = graphql.NewObject(graphql.ObjectConfig{
 			Name: "store",
 			Type: graphql.String,
 		},
+		"image": &graphql.Field{
+			Name: "image",
+			Type: graphql.String,
+		},
 	}})
 
 var typeStore = graphql.NewObject(graphql.ObjectConfig{

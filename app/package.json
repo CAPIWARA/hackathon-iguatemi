@@ -23,6 +23,7 @@
   "rnpm": {
     "assets": [
       "./assets/fonts/",
+      "./assets/icons/",
       "./assets/images/"
     ]
   }

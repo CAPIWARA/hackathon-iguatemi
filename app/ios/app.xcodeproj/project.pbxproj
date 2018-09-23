@@ -44,6 +44,10 @@
 		F94B4E67F99A4FAF90CD7F7C /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB96CC339A9E441A8D7F0149 /* libBVLinearGradient.a */; };
 		AE6EF5A793FF41279302C0BB /* Avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C84D26F845FE4791ADFA23D1 /* Avatar.jpeg */; };
 		F45BBEAFF6C34A77BC1ABF32 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A81C22AA40548DFAEEB0057 /* Lato-Light.ttf */; };
+		81BF0D12305B4B7AA43DE329 /* Camera-Contrast.png in Resources */ = {isa = PBXBuildFile; fileRef = D30F624FE71C435FBBFD5388 /* Camera-Contrast.png */; };
+		1646584D20F6442FA11B192E /* Camera-Contrast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F88C16A70A47889EDD5036 /* Camera-Contrast@2x.png */; };
+		347C363FB791452485372B69 /* Camera-Contrast@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4925D691EBFA4245B197BC4D /* Camera-Contrast@3x.png */; };
+		DFED44A3933848D188428C96 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6523FEF8CA524E1ABD981CE7 /* Lato-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +363,10 @@
 		CB96CC339A9E441A8D7F0149 /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		C84D26F845FE4791ADFA23D1 /* Avatar.jpeg */ = {isa = PBXFileReference; name = "Avatar.jpeg"; path = "../assets/images/Avatar.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0A81C22AA40548DFAEEB0057 /* Lato-Light.ttf */ = {isa = PBXFileReference; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D30F624FE71C435FBBFD5388 /* Camera-Contrast.png */ = {isa = PBXFileReference; name = "Camera-Contrast.png"; path = "../assets/icons/Camera-Contrast.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F8F88C16A70A47889EDD5036 /* Camera-Contrast@2x.png */ = {isa = PBXFileReference; name = "Camera-Contrast@2x.png"; path = "../assets/icons/Camera-Contrast@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4925D691EBFA4245B197BC4D /* Camera-Contrast@3x.png */ = {isa = PBXFileReference; name = "Camera-Contrast@3x.png"; path = "../assets/icons/Camera-Contrast@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6523FEF8CA524E1ABD981CE7 /* Lato-Regular.ttf */ = {isa = PBXFileReference; name = "Lato-Regular.ttf"; path = "../assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,6 +641,10 @@
 				AF302944599A4403A9E65FE1 /* Prata-Regular.ttf */,
 				C84D26F845FE4791ADFA23D1 /* Avatar.jpeg */,
 				0A81C22AA40548DFAEEB0057 /* Lato-Light.ttf */,
+				D30F624FE71C435FBBFD5388 /* Camera-Contrast.png */,
+				F8F88C16A70A47889EDD5036 /* Camera-Contrast@2x.png */,
+				4925D691EBFA4245B197BC4D /* Camera-Contrast@3x.png */,
+				6523FEF8CA524E1ABD981CE7 /* Lato-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1088,6 +1100,10 @@
 				D9848EBD49604198A26DE3D8 /* Prata-Regular.ttf in Resources */,
 				AE6EF5A793FF41279302C0BB /* Avatar.jpeg in Resources */,
 				F45BBEAFF6C34A77BC1ABF32 /* Lato-Light.ttf in Resources */,
+				81BF0D12305B4B7AA43DE329 /* Camera-Contrast.png in Resources */,
+				1646584D20F6442FA11B192E /* Camera-Contrast@2x.png in Resources */,
+				347C363FB791452485372B69 /* Camera-Contrast@3x.png in Resources */,
+				DFED44A3933848D188428C96 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { StatusBar, Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
+import {
+  StatusBar,
+  Dimensions,
+  SafeAreaView,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 const { height: SCREEN_SIZE } = Dimensions.get('screen');
 
@@ -25,6 +31,7 @@ class Screen extends Component {
     return (
       <View style={ styles.container }>
         <StatusBar barStyle={ bar }/>
+        <View>{  }</View>
         <SafeAreaView style={ styles.screen }>
           { this.props.children }
         </SafeAreaView>

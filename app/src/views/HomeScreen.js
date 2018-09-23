@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Button, Dimensions, View } from 'react-native';
+import { StyleSheet, Dimensions, View } from 'react-native';
 import Fill from '@/components/Fill';
 import Text from '@/components/Text';
-import Avatar, { AVATAR_SIZE } from '@/components/Avatar';
 import Screen from '@/components/Screen';
+import Avatar, { AVATAR_SIZE } from '@/components/Avatar';
 import { recoverItems } from '@/services/cart';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { recoverScore } from '../services/score';
 import { recoverUser } from '@/services/user';
+import HomeStartButton from '@/components/Home/HomeStartButton';
 
 class HomeScreen extends Component {
   state = {
@@ -58,9 +59,7 @@ class HomeScreen extends Component {
         />
         <Text style={ styles.name }>{ this.state.user && this.state.user.name }</Text>
 
-        <Block >
-
-        </Block>
+        <HomeStartButton onStart />
       </Screen>
     );
   }

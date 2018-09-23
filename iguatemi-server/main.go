@@ -6,6 +6,7 @@ import (
 	"hackathon-iguatemi/iguatemi-server/database"
 	"log"
 	"net/http"
+	"os"
 	"runtime"
 
 	"github.com/gorilla/mux"
@@ -14,6 +15,7 @@ import (
 
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU() - 1)
+	os.Setenv("PAGARME_APIKEY", "ak_test_7oHnHB8vfkN54xSTipWnFd5dPbuth1")
 	if err := database.LoadDatabase(); err != nil {
 		log.Fatalf("Database error: %v", err)
 		return

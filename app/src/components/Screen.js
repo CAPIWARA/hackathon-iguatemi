@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
+import { StatusBar, Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
 
-const { height: SCREEN_SIZE } = Dimensions.get('window');
+const { height: SCREEN_SIZE } = Dimensions.get('screen');
 
 class Screen extends Component {
   call = (name) => (payload) => {
@@ -20,8 +20,11 @@ class Screen extends Component {
   }
 
   render () {
+    const bar = this.props.isDarkStatusBar ? 'light-content' : 'dark-content';
+
     return (
       <View style={ styles.container }>
+        <StatusBar barStyle={ bar }/>
         <SafeAreaView style={ styles.screen }>
           { this.props.children }
         </SafeAreaView>
@@ -34,11 +37,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: SCREEN_SIZE,
+    backgroundColor: '#FFFFFF',
   },
 
-  screen: {
-    flex: 1,
-  }
+  screen: { flex: 1 },
 });
 
 export { SCREEN_SIZE };

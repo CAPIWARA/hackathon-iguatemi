@@ -9,7 +9,7 @@ import Authentication from '@/domains/Authentication/services';
 class LoaderScreen extends Component {
   async componentDidMount () {
     const isAuthenticated = await Authentication.isAuthenticated();
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     this.props.navigation.navigate(isAuthenticated ? 'User' : 'Guest');
   }
 

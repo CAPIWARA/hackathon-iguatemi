@@ -4,8 +4,8 @@ import Text from '@/components/Text';
 import Block from '@/components/Block';
 import CameraIcon from '../../../assets/icons/Camera-Contrast.png';
 
-const HomeStartButton = ({ onStart }) => (
-  <Block onPress={ onStart }>
+const HomeStartButton = ({ onPress }) => (
+  <Block onPress={ onPress }>
     <Image style={ styles.figure } source={ CameraIcon } />
     <Text style={ styles.statement } numberOfLines={ 2 }>
       Fotografe os produtos <Text style={ styles.strong }>myOne</Text> e compre-os facilmente.

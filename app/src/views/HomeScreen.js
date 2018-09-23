@@ -4,11 +4,16 @@ import Fill from '@/components/Fill';
 import Text from '@/components/Text';
 import Screen from '@/components/Screen';
 import Avatar, { AVATAR_SIZE } from '@/components/Avatar';
-import { recoverItems } from '@/services/cart';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import { recoverScore } from '../services/score';
-import { recoverUser } from '@/services/user';
 import HomeStartButton from '@/components/Home/HomeStartButton';
+import HomeServicesItems from '@/components/Home/HomeServicesItems';
+
+/**
+ * Serviços.
+ */
+import { recoverUser } from '@/services/user';
+import { recoverItems } from '@/services/cart';
+import { recoverScore } from '@/services/score';
 
 class HomeScreen extends Component {
   state = {
@@ -59,7 +64,9 @@ class HomeScreen extends Component {
         />
         <Text style={ styles.name }>{ this.state.user && this.state.user.name }</Text>
 
-        <HomeStartButton onStart />
+        <HomeStartButton onPress={ this.onMoveToScanner }  />
+
+        <HomeServicesItems />
       </Screen>
     );
   }

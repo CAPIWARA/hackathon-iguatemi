@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
 
   statement: {
+    flex: 1,
     fontFamily: 'Lato-Light',
     fontSize: 16,
     color: '#707070',

@@ -62,9 +62,12 @@ class HomeScreen extends Component {
           source={ this.state.user && this.state.user.avatar }
           containerStyle={ styles.avatar }
         />
+
         <Text style={ styles.name }>{ this.state.user && this.state.user.name }</Text>
 
-        <HomeStartButton onPress={ this.onMoveToScanner }  />
+        <View style={ styles.view }>
+          <HomeStartButton style={ styles.view } onPress={ this.onMoveToScanner }  />
+        </View>
 
         <HomeServicesItems />
       </Screen>
@@ -80,6 +83,10 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'Prata-Regular',
     fontSize: 22,
+    marginTop: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 20,
   },
 
   text: { fontSize: 20 },
@@ -94,6 +101,11 @@ const styles = StyleSheet.create({
     height: CIRCLE_SIZE - CIRCLE_SIZE / 1.5 - getStatusBarHeight() - AVATAR_SIZE / 2,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  view: {
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 
   circle: {

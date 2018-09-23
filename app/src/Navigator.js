@@ -7,6 +7,7 @@ import HomeScreen from '@/views/HomeScreen';
 import LoginScreen from '@/views/LoginScreen';
 import LoaderScreen from '@/views/LoaderScreen';
 import ScannerScreen from '@/views/ScannerScreen';
+import DetailsScreen from '@/views/DetailsScreen';
 
 /**
  * Mapa de telas para os visitantes.
@@ -21,6 +22,7 @@ const screensForGuests = {
 const screensForUsers = {
   Home: HomeScreen,
   Scanner: ScannerScreen,
+  Details: DetailsScreen,
 };
 
 /**

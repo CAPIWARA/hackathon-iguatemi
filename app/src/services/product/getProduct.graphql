@@ -1,0 +1,9 @@
+query getProduct ($productID: String!) {
+  product: getProduct (productId: $productID) {
+    id
+    name
+    price
+    store
+    image
+  }
+}

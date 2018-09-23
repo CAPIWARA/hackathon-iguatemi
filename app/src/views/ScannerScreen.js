@@ -25,7 +25,7 @@ class ScannerScreen extends Component {
     const picture = await takePicture(this.reference);
     await new Promise((resolve) => setTimeout(resolve, 3000));
     this.setState({ isFetching: false });
-    this.navigation.navigate();
+    this.props.navigation.navigate('Details');
   };
 
   onLogout = async () => {

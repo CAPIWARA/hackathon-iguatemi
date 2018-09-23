@@ -1,14 +1,20 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import AvatarImage from '../../assets/images/Avatar.jpeg';
 
-const Avatar = ({ containerStyle }) => (
+const Avatar = ({
+  source,
+  containerStyle
+}) => (
   <View style={[ styles.container, containerStyle ]}>
-    <Image
-      style={ styles.avatar }
-      source={ AvatarImage }
-      resizeMode="cover"
-    />
+    {
+      source && (
+        <Image
+          style={ styles.avatar }
+          source={{ uri: source }}
+          resizeMode="cover"
+        />
+      )
+    }
   </View>
 );
 

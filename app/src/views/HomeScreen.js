@@ -7,6 +7,7 @@ import Screen from '@/components/Screen';
 import { recoverItems } from '@/services/cart';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { recoverScore } from '../services/score';
+import { recoverUser } from '@/services/user';
 
 class HomeScreen extends Component {
   state = {
@@ -17,14 +18,25 @@ class HomeScreen extends Component {
   onMoveToScanner = () => this.props.navigation.push('Scanner');
 
   onLoad = async () => {
-    const items = await recoverItems();
-    const score = await recoverScore();
-    this.setState({ items, score });
+    const [ user, items, score ] = await Promise.all([
+      recoverUser(),
+      recoverItems(),
+      recoverScore(),
+    ]);
+
+    this.setState({ user, items, score });
   };
 
   componentDidMount () {
     this.onLoad();
   }
+
+  get score () {
+    return Number(this.state.score)
+      .toFixed(0)
+      .replace('.', ',')
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  };
 
   render () {
     return (
@@ -35,11 +47,20 @@ class HomeScreen extends Component {
       >
         <Fill style={ styles.circle } />
         <View style={ styles.space  }>
-          <Text style={ styles.score }>{ this.state.score }</Text>
+          <Text style={ styles.score }>
+            { this.score }
+            <Text style={ styles.text }> pontos</Text> 
+          </Text>
         </View>
-        <Avatar containerStyle={ styles.avatar } />
-        <Text>{ this.state.items.length } items no carrinho.</Text>
-        <Button title="Câmera" onPress={ this.onMoveToScanner } />
+        <Avatar
+          source={ this.state.user && this.state.user.avatar }
+          containerStyle={ styles.avatar }
+        />
+        <Text style={ styles.name }>{ this.state.user && this.state.user.name }</Text>
+
+        <Block >
+
+        </Block>
       </Screen>
     );
   }
@@ -50,15 +71,23 @@ const { width: SCREEN_WIDTH } = Dimensions.get('screen');
 const CIRCLE_SIZE = SCREEN_WIDTH + (SCREEN_WIDTH / 3);
 
 const styles = StyleSheet.create({
+  name: {
+    fontFamily: 'Prata-Regular',
+    fontSize: 22,
+  },
+
+  text: { fontSize: 20 },
+
   score: {
     color: '#FFFFFF',
-    fontSize: 22,
+    fontSize: 40,
+    fontFamily: 'Lato-Light',
   },
 
   space: {
     height: CIRCLE_SIZE - CIRCLE_SIZE / 1.5 - getStatusBarHeight() - AVATAR_SIZE / 2,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 
   circle: {

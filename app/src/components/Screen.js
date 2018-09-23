@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, SafeAreaView } from 'react-native';
+import { Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
 
 const { height: SCREEN_SIZE } = Dimensions.get('window');
 

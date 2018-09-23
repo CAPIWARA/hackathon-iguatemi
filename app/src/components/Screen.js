@@ -22,7 +22,9 @@ class Screen extends Component {
   render () {
     return (
       <View style={ styles.container }>
-        <SafeAreaView>{ this.props.children }</SafeAreaView>
+        <SafeAreaView style={ styles.screen }>
+          { this.props.children }
+        </SafeAreaView>
       </View>
     );
   }
@@ -30,8 +32,13 @@ class Screen extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: SCREEN_SIZE,
   },
+
+  screen: {
+    flex: 1,
+  }
 });
 
 export { SCREEN_SIZE };
